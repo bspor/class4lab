@@ -18,12 +18,12 @@ public class Calculate {
      * @param width a double representing the length of a rectangle.
      * @return a double as the area. 
      */
-    public double calcAreaRec (double length, double width) {
+    public String calcAreaRec (double length, double width) {
         if (length < 0 || width < 0 ) {
-            return 0;
+            return "";
         } else {
-            double area;
-            area = length * width;
+            String area;
+            area = Double.toString(length * width);
             return area;
         }
     }
@@ -33,14 +33,27 @@ public class Calculate {
      * @param radius a double as radius of a circle
      * @return area of a circle as a double. 
      */
-    public double calcAreaCircle (double radius) {
+    public String calcAreaCircle (double radius) {
         if (radius < 0 ) {
-            return 0;
+            return "";
         } else {
             final double PI = java.lang.Math.PI;
-            double answer;
-            answer = (radius * radius) * PI;
+            String answer;
+            answer = Double.toString((radius * radius) * PI);
             return answer;
         }
     }
+    
+    public String calcTriangleSide (double side1, double side2) {
+        if (side1 < 0 || side2 < 0 ) {
+            return "bewonk";
+        } else {
+            String answer;
+            double primAnswer = java.lang.Math.sqrt((side1 * side1 + side2 * side2));
+            answer = Double.toString(primAnswer);
+            return answer;
+        }
+    }
+
+ 
 }
